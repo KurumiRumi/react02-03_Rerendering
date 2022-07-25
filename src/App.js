@@ -2,6 +2,11 @@ import { useCallback, useMemo, useState } from "react";
 import { ChildArea } from "./ChildArea";
 import "./styles.css";
 
+// 再レンダリングが起きる条件
+// ①stateが更新されたコンポーネントは再レンダリング
+// ②propsが変更されたコンポーネントは再レンダリング
+// ③再レンダリングされたコンポーネント配下の子要素は再レンダリング
+
 export default function App() {
   const [text, setText] = useState("");
   const [open, setOpen] = useState(false);
